@@ -4,15 +4,17 @@ def sample_var_std(x):
     """
     Compute sample variance and standard deviation.
     """
-    x = np.asarray(x, dtype = float)
-    n = len(x)
+    x = np.asarray(x, dtype=float)
     
-    mean_x = np.mean(x)
+    n = len(x)              
+    mean_x = np.mean(x)     
     
-    var = np.sum((x - mean_x) ** 2) / (n - 1)
+    var = np.sum((x - mean_x) ** 2) / (n - 1)   
+    std = np.sqrt(var)     
     
-    dev = np.sqrt(var)
-    
-    return var, dev
+    return var, std
 
-x=[1,2,3]
+
+
+x = [1, 2, 3]
+print(sample_var_std(x))
